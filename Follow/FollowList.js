@@ -1,17 +1,3 @@
-
-
-type Following {
-    follow(id: String!): Boolean
-}
-
-export default {
-    Following: {
-        follow: async (_, args, {request}) => {
-            isAuthenticated
-        }
-    }
-}
-
 // 한 회원이 팔로우누르면
 // 팔로잉 + 1 (회원 b가 찍힘)
 

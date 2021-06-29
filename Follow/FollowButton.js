@@ -1,19 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Button } from 'antd';
 
-class Aside extends React.Component{
-    constructor(){
-        this.state = {
-            users: [],
-        }
+const FollowButton = () => {
+    const [follow, setFollow] = useState("");
+
+    const toggleFollow = (isFollow) => {
+        return isFollow ? false : true
     }
+    return (
+        <Button type="primary" onClick={() => setFollow(toggleFollow(follow))}>
+            {follow ? 'unfollow' : 'follow'}
+        </Button>
+    )
 }
 
-followUser = (id) => {
-    const newFollowingList = this.state.users.map((user) => {
-        if (user.userId === id) {
-            user.isFollowing = !user.isFollowing
-        }
-        return user
-    })
-    this.setState({isers: newFollowingList})
-}
+export default FollowButton;
